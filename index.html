@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megan Shkolyar</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --bg: #FAFAF8; --bg2: #F2F0EB; --text: #1A1A18; --muted: #6B6B65; --accent: #2D5A3D; --accent-light: #EAF3DE; --border: #E2DFD8; --serif: Georgia, serif; --sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(250,250,248,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.nav-name { font-size: 14px; font-weight: 500; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+section { padding: 5rem 0; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+#hero { padding-top: 9rem; padding-bottom: 5rem; border-bottom: 1px solid var(--border); }
+.hero-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px; }
+.hero-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+h1 { font-family: var(--serif); font-size: clamp(2.2rem,5vw,3rem); font-weight: normal; line-height: 1.2; margin-bottom: 1.5rem; }
+h1 em { font-style: italic; color: var(--accent); }
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.75; margin-bottom: 2rem; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 12px; padding: 4px 12px; background: var(--bg2); border: 1px solid var(--border); border-radius: 100px; color: var(--muted); }
+.section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 2rem; display: flex; align-items: center; gap: 12px; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: normal; line-height: 1.3; margin-bottom: 1rem; }
+h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.25rem; }
+p { color: var(--muted); margin-bottom: 1rem; }
+.about-text { font-size: 1.05rem; line-height: 1.8; }
+.about-text p { color: var(--text); margin-bottom: 1.25rem; }
+.about-text strong { font-weight: 500; }
+.dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 2rem; }
+.dual-card { background: var(--bg); padding: 1.75rem; }
+.dual-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 16px; }
+.dual-icon.green { background: var(--accent-light); color: var(--accent); }
+.dual-icon.warm { background: #FAEEDA; color: #854F0B; }
+.dual-title { font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text); }
+.dual-body { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+.work-items { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+.work-item { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; }
+.work-num { width: 36px; height: 36px; border-radius: 50%; background: var(--bg2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: var(--muted); }
+.work-content h3 { font-size: 0.9375rem; color: var(--text); }
+.work-content p { font-size: 0.875rem; color: var(--muted); margin-top: 0.25rem; }
+#perspective { background: var(--bg2); }
+.perspective-intro { font-family: var(--serif); font-size: 1.25rem; line-height: 1.7; color: var(--text); margin-bottom: 2rem; }
+.perspective-intro em { color: var(--accent); }
+.beliefs { display: flex; flex-direction: column; gap: 1rem; }
+.belief { padding: 1.25rem 1.5rem; background: var(--bg); border-radius: 10px; border-left: 3px solid var(--accent); }
+.belief-title { font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.375rem; }
+.belief-body { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+.exp-list { display: flex; flex-direction: column; margin-top: 2rem; }
+.exp-item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.exp-item:first-child { border-top: 1px solid var(--border); }
+.exp-org { font-size: 0.9375rem; font-weight: 500; color: var(--text); }
+.exp-role { font-size: 0.8125rem; color: var(--muted); margin-top: 2px; }
+.exp-date { font-size: 0.8125rem; color: var(--muted); white-space: nowrap; }
+.contact-card { background: var(--text); border-radius: 16px; padding: 2.5rem; text-align: center; }
+.contact-card h2 { color: var(--bg); font-family: var(--serif); font-size: 1.75rem; margin-bottom: 0.75rem; }
+.contact-card p { color: rgba(250,250,248,0.6); margin-bottom: 2rem; }
+.contact-email { display: inline-block; padding: 0.75rem 1.75rem; background: var(--bg); color: var(--text); text-decoration: none; border-radius: 8px; font-size: 0.9375rem; font-weight: 500; }
+footer { padding: 2rem; text-align: center; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+@media (max-width:600px) { .dual-grid { grid-template-columns: 1fr; } .nav-links { display: none; } h1 { font-size: 2rem; } }
+</style></head><body>
+<nav><span class="nav-name">Megan Shkolyar</span><div class="nav-links"><a href="#about">About</a><a href="#work">Work</a><a href="#perspective">Perspective</a><a href="#background">Background</a><a href="#contact">Contact</a></div></nav>
+<section id="hero"><div class="container"><div class="hero-label">New York, NY</div><h1>Strategy. Venture.<br><em>The space between.</em></h1><p class="hero-sub">I build things at the intersection of enterprise AI and the startup ecosystem — advising Fortune 500s on AI deployment by day, and backing early-stage founders as an investor and fund co-founder.</p><div class="hero-tags"><span class="tag">AI Strategy</span><span class="tag">Venture Investing</span><span class="tag">Startup Ecosystems</span><span class="tag">GTM Programs</span><span class="tag">Responsible AI</span><span class="tag">NYC</span></div></div></section>
+<section id="about"><div class="container"><div class="section-label">About</div><div class="about-text"><p>Most people are on one side of a wall: either they work inside large organizations helping them navigate technology, or they're embedded in the startup world helping founders grow. I've spent my career refusing to pick a side.</p><p>At <strong>Accenture Strategy</strong>, I work as a Senior Strategy Consultant on Corporate Growth &amp; Strategy — designing AI programs, building agents, and helping complex organizations actually change how they operate.</p><p>Outside of that, I co-founded <strong>Gorges Ventures</strong>, an MBA-run investment fund. We've raised over $400K to back early-stage Cornell founders, and I recently closed a $500K SPV for Heka Global.</p><p>What ties it all together is a belief that AI is the most consequential technology of my lifetime, and that the people who shape its adoption matter enormously.</p></div><div class="dual-grid"><div class="dual-card"><div class="dual-icon green">&#x2B21;</div><div class="dual-title">Enterprise AI &amp; Strategy</div><div class="dual-body">Designing and deploying AI programs for Fortune 500 clients — from agent architecture to C-suite stakeholder alignment.</div></div><div class="dual-card"><div class="dual-icon warm">&#x25C8;</div><div class="dual-title">Venture &amp; Founder Community</div><div class="dual-body">Co-founder of Gorges Ventures, active VC associate. Deep ties to the NYC and Cornell startup ecosystems.</div></div></div></div></section>
+<section id="work" style="border-top:1px solid var(--border)"><div class="container"><div class="section-label">What I'm working on</div><h2>Current projects</h2><div class="work-items"><div class="work-item"><div class="work-num">01</div><div class="work-content"><h3>Building an AI agent inside a global financial institution</h3><p>Designed and deployed a talent assessment AI agent end-to-end in partnership with C-suite stakeholders at a top-5 global bank.</p></div></div><div class="work-item"><div class="work-num">02</div><div class="work-content"><h3>Leading a global sales conference from the L&amp;D seat</h3><p>Co-leading a major financial institution's annual sales conference alongside the Chief Commercial Officer.</p></div></div><div class="work-item"><div class="work-num">03</div><div class="work-content"><h3>Closing a $500K SPV for Heka Global</h3><p>Just closed a $500K SPV for Heka Global — managing LP relationships and deal execution from start to finish.</p></div></div><div class="work-item"><div class="work-num">04</div><div class="work-content"><h3>Growing the Gorges Ventures NYC presence</h3><p>Building relationships with accelerator programs, angel networks, and investors across New York City.</p></div></div></div></div></section>
+<section id="perspective"><div class="container"><div class="section-label">Perspective</div><p class="perspective-intro">I think about AI differently than most people in strategy consulting — because I've also sat on the other side of the table, as an investor trying to figure out <em>which AI bets actually matter</em>.</p><div class="beliefs"><div class="belief"><div class="belief-title">Adoption is harder than deployment</div><div class="belief-body">Most AI initiatives fail not because the technology doesn't work, but because the organization isn't ready for it. The change management side of AI is the most underrated problem in enterprise tech.</div></div><div class="belief"><div class="belief-title">Startups are the real AI laboratory</div><div class="belief-body">Enterprise AI moves slowly. Startups move fast and learn. Watching founders navigate the AI landscape in real time is the best signal I know.</div></div><div class="belief"><div class="belief-title">The who matters as much as the what</div><div class="belief-body">Which companies get access to frontier AI, which founders get backed — these are not neutral decisions. I care deeply about expanding access and building programs that bring more people into the ecosystem.</div></div><div class="belief"><div class="belief-title">Responsible AI is a strategy problem, not just an ethics problem</div><div class="belief-body">Governance, safety, and trust aren't constraints on AI deployment — they're the preconditions for it. Organizations that get this right will win.</div></div></div></div></section>
+<section id="background" style="border-top:1px solid var(--border)"><div class="container"><div class="section-label">Background</div><h2>Experience &amp; education</h2><div class="exp-list"><div class="exp-item"><div><div class="exp-org">Accenture Strategy</div><div class="exp-role">Senior Strategy Consultant, Corporate Growth &amp; Strategy</div></div><div class="exp-date">2020–Present</div></div><div class="exp-item"><div><div class="exp-org">Gorges Ventures</div><div class="exp-role">Co-Founder &amp; President</div></div><div class="exp-date">2024–Present</div></div><div class="exp-item"><div><div class="exp-org">Nine Four Ventures</div><div class="exp-role">MBA Investment Associate</div></div><div class="exp-date">2024–Present</div></div><div class="exp-item"><div><div class="exp-org">Muse Capital</div><div class="exp-role">Venture Capital Associate</div></div><div class="exp-date">2023</div></div><div class="exp-item"><div><div class="exp-org">Cornell SC Johnson College of Business</div><div class="exp-role">MBA · ROMBA Fellow · Forté Scholar</div></div><div class="exp-date">2025</div></div><div class="exp-item"><div><div class="exp-org">Cornell University, ILR School</div><div class="exp-role">BS, Industrial &amp; Labor Relations — Honors · GPA 3.87</div></div><div class="exp-date">2020</div></div></div></div></section>
+<section id="contact" style="border-top:1px solid var(--border)"><div class="container"><div class="contact-card"><h2>Let's talk.</h2><p>Whether it's AI strategy, venture, or just an interesting conversation about where things are headed.</p><a href="mailto:megan@gorgesventures.com" class="contact-email">megan@gorgesventures.com</a></div></div></section>
+<footer>© 2026 Megan Shkolyar · New York, NY</footer>
+</body></html>
