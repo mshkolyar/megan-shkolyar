@@ -115,8 +115,13 @@
 
   /* ---------- TRANSCRIPT ---------- */
   .transcript{ display:flex; flex-direction:column; gap:0; }
-  .turn{ display:grid; grid-template-columns:96px 1fr; gap:22px; padding:26px 0; border-top:1px solid var(--line); }
-  .turn:first-child{ border-top:none; }
+  .qpair{ padding-top:30px; border-top:1px solid var(--line); }
+  .qpair:first-child{ padding-top:0; border-top:none; }
+  .pair-head{
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:15px;
+    color:var(--blue); margin-bottom:16px; letter-spacing:.005em;
+  }
+  .turn{ display:grid; grid-template-columns:96px 1fr; gap:22px; padding:12px 0; }
   .turn .time{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:#A7ABC6; padding-top:3px; }
   .speaker{ display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
   .speaker .who{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.08em; font-weight:500; }
@@ -127,11 +132,6 @@
   .mlist{ margin:0 0 10px; padding-left:19px; }
   .mlist li{ margin-bottom:7px; font-size:15.5px; }
   .mlist li:last-child{ margin-bottom:0; }
-  .tag{
-    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase;
-    padding:5px 11px; border-radius:20px; background:var(--bg-tint); color:var(--blue); margin-top:4px;
-    border:1px solid var(--line);
-  }
   @media (max-width:600px){ .turn{ grid-template-columns:1fr; } .turn .time{ padding-top:0; } }
 
   /* ---------- HIGHLIGHT REEL ---------- */
@@ -228,12 +228,12 @@
   <div class="wrap">
     <div class="brand">Megan Shkolyar</div>
     <div class="links">
-      <a class="mono always" href="#transcript">Transcript</a>
+      <a class="mono always" href="#personality">Personality</a>
+      <a class="mono" href="#transcript">Transcript</a>
       <a class="mono" href="#reel">Highlights</a>
       <a class="mono" href="#skills">Skills</a>
       <a class="mono" href="#fluent">Fluent</a>
       <a class="mono" href="#experience">Experience</a>
-      <a class="mono" href="#personality">Personality</a>
       <a class="mono always" href="#contact">Contact</a>
     </div>
   </div>
@@ -266,7 +266,7 @@
   </svg>
   <div class="wrap">
     <div class="eyebrow mono"><span class="dot"></span>Study — Head of Customer Marketing, Listen Labs</div>
-    <h1 class="thesis">Understand what people want, and why — since 2020, I've been <em>listening first</em> to build the relationships that make people want to talk.</h1>
+    <h1 class="thesis">Understand what people want, and why, to accelerate mutual growth. Since 2020, I've been <em>listening first</em> to build the relationships that make people want to talk.</h1>
     <p class="hero-sub">A case for why Megan Shkolyar is the person who builds Listen's customer community, reference program, and the room enterprise clients are proud to be in.</p>
     <div class="meta-row mono">
       <div><span class="label">Participant</span><span class="value">Megan Shkolyar</span></div>
@@ -277,157 +277,232 @@
   </div>
 </header>
 
+<section id="personality" style="background:var(--bg-tint);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">01 — I Already Use Your Product</span>
+      <h2>Turned Listen's own personality test on myself. Here's what came back.</h2>
+    </div>
+    <div class="traitcard reveal">
+      <div class="traitrow">
+        <span class="tname">Agreeable</span>
+        <span class="tbar"><span class="tfill" style="width:92%;background:var(--amber);"></span></span>
+        <span class="tpct">92%</span>
+      </div>
+      <div class="traitrow">
+        <span class="tname">Open</span>
+        <span class="tbar"><span class="tfill" style="width:67%;background:var(--green);"></span></span>
+        <span class="tpct">67%</span>
+      </div>
+      <div class="traitrow">
+        <span class="tname">Conscientious</span>
+        <span class="tbar"><span class="tfill" style="width:57%;background:var(--violet);"></span></span>
+        <span class="tpct">57%</span>
+      </div>
+      <div class="traitrow">
+        <span class="tname">Neurotic</span>
+        <span class="tbar"><span class="tfill" style="width:53%;background:var(--coral);"></span></span>
+        <span class="tpct">53%</span>
+      </div>
+      <div class="traitrow">
+        <span class="tname">Extraverted</span>
+        <span class="tbar"><span class="tfill" style="width:47%;background:var(--blue);"></span></span>
+        <span class="tpct">47%</span>
+      </div>
+      <p class="trait-callout">92% agreeable — compassionate, cooperative, empathetic — is the headline. It's the same instinct behind building a sales methodology around <em>unreasonable hospitality</em> instead of a script. Moderate on extraversion, too: energized by people, not by being the loudest one in the room — which is closer to what hosting a customer community actually requires.</p>
+      <a class="mono result-link" href="https://listenlabs.ai/personality/test/r/6707bbbf6c1e456b" target="_blank" rel="noopener">View the full result on Listen →</a>
+    </div>
+  </div>
+</section>
+
 <section id="transcript">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">01 — The Interview</span>
-      <h2>Seven questions Listen would ask, answered in order.</h2>
+      <span class="mono">02 — The Interview</span>
+      <h2>Seven questions Listen would ask to determine fit.</h2>
     </div>
     <div class="transcript">
 
-      <div class="turn ask reveal">
-        <div class="time">00:00</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>Building a customer community from scratch is different from running an event calendar. What tells us you can do the former?</p>
+      <div class="qpair reveal">
+        <div class="pair-head">Ground-Up Builder of Community &amp; Learning</div>
+        <div class="turn ask">
+          <div class="time">00:00</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>Building a customer community from scratch is different from running an event calendar. What tells us you can do the former?</p>
+          </div>
         </div>
-      </div>
-      <div class="turn reveal">
-        <div class="time">00:14</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Co-founded Gorges Ventures, an MBA-run venture fund; built the community from scratch to 60+ LPs across multiple fund vintages.</li>
-            <li>Brand demand now strong enough to drive two new vintages — Fund 26 and Fund 27 — and a formal licensing agreement with outside counsel to protect the name.</li>
-            <li>Partnered with senior leaders across every region of a global financial institution to identify their top upskilling priorities: pitching to win new business, and strategic engagement to retain at-risk clients.</li>
-            <li>Built the learning curriculum for both and cascaded it into a course practiced live at Liftoff, the bank's flagship sales conference.</li>
-          </ul>
-          <span class="tag">Maps to: Community & learning, ground up</span>
-        </div>
-      </div>
-
-      <div class="turn ask reveal">
-        <div class="time">01:02</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>Enterprise stakeholders can smell "transactional" from a mile away. How do you build trust with them that actually holds?</p>
-        </div>
-      </div>
-      <div class="turn reveal">
-        <div class="time">01:19</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Partner directly with the Chief Commercial Officer and her Heads of Client Coverage and Client Service at a global financial institution.</li>
-            <li>Led the full talent assessment and current-state analysis behind the Commercial organization's Talent &amp; AI Strategy.</li>
-            <li>Presented findings directly to the institution's Global Head of Client Service and Head of Client Coverage.</li>
-            <li>Built the underlying methodology around one principle — unreasonable hospitality, not a script — the difference between a client who tolerates a partner and one who actively advocates for them internally.</li>
-          </ul>
-          <span class="tag">Maps to: Senior stakeholder trust</span>
+        <div class="turn">
+          <div class="time">00:14</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Co-founded Gorges Ventures, an MBA-run venture fund; built the community from scratch to 60+ LPs across multiple fund vintages.</li>
+              <li>Brand demand now strong enough to drive two new vintages — Fund 26 and Fund 27 — and a formal licensing agreement with outside counsel to protect the name.</li>
+              <li>Partnered with senior leaders across every region of a global financial institution to identify their top upskilling priorities: pitching to win new business, and strategic engagement to retain at-risk clients.</li>
+              <li>Built the learning curriculum for both and cascaded it into a course practiced live at Liftoff, the bank's flagship sales conference.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="turn ask reveal">
-        <div class="time">02:05</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>Sales needs the right customer voice in the right conversation, at the right moment. How would you build that pipeline?</p>
+      <div class="qpair reveal">
+        <div class="pair-head">Trusted Advisor to the C-Suite &amp; Senior Stakeholders</div>
+        <div class="turn ask">
+          <div class="time">01:02</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>Enterprise stakeholders can smell "transactional" from a mile away. How do you build trust with them that actually holds?</p>
+          </div>
         </div>
-      </div>
-      <div class="turn reveal">
-        <div class="time">02:21</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Designed and executed a $250M ecosystem partnership go-to-market strategy across product, engineering, and client sales.</li>
-            <li>Led total addressable market sizing for a global beauty and wellness company — sourced third-party data to model 5-year CAGR and segment-level TAM.</li>
-            <li>Supported the quantitative customer research that determined which consumer segments to prioritize, and coached a newly onboarded Senior Strategy Consultant on the underlying financial modeling.</li>
-            <li>Both required the same underlying skill: identifying exactly who your best customers are, in figures a sales organization can act on.</li>
-          </ul>
-          <span class="tag">Maps to: Reference program logic</span>
-        </div>
-      </div>
-
-      <div class="turn ask reveal">
-        <div class="time">03:00</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>This role sits at the intersection of Sales, CS, and Marketing. How do you keep three teams with three different incentives moving together?</p>
-        </div>
-      </div>
-      <div class="turn reveal">
-        <div class="time">03:16</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Built interview guides and led 20+ structured interviews with Directors, Senior Directors, and VPs across Data Engineering, Sales &amp; Transformation, Data Science, Supply Chain, and Commercial functions to redesign an operating model and map digital role profiles for a Fortune 500 food &amp; beverage company.</li>
-            <li>Led working sessions with the VP of Finance, Controller, and Director of Sourcing for a Fortune 500 building-materials distribution company, managing a team of 4 analysts to analyze 1M+ survey data points and identify $4M+ in OpEx savings.</li>
-            <li>Directed cross-functional global teams through end-to-end business strategy launches and managed customer onboarding across functions against shared enterprise KPIs.</li>
-          </ul>
-          <span class="tag">Maps to: Sales / CS / Marketing alignment</span>
+        <div class="turn">
+          <div class="time">01:19</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Partner directly with the Chief Commercial Officer and her Heads of Client Coverage and Client Service at a global financial institution.</li>
+              <li>Led a full talent assessment to close capability gaps and strategically up-level commercial talent in support of a 30% YoY growth ambition.</li>
+              <li>Advised the Global Heads of Client Service and Client Coverage directly on current talent, data, and process gaps limiting growth.</li>
+              <li>Built the underlying methodology around one principle — unreasonable hospitality, not a script — the difference between a client who tolerates a partner and one who actively advocates for them internally.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="turn ask reveal">
-        <div class="time">03:58</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>This is a zero-to-one seat — no playbook exists yet. What's your evidence you can build one?</p>
+      <div class="qpair reveal">
+        <div class="pair-head">Translates Customer Data Into Sales-Ready Segments</div>
+        <div class="turn ask">
+          <div class="time">02:05</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>Sales needs the right customer voice in the right conversation, at the right moment. How would you build that pipeline?</p>
+          </div>
         </div>
-      </div>
-      <div class="turn reveal">
-        <div class="time">04:11</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Gorges Ventures: fund infrastructure, LP pipeline, and portfolio advisory, all built from a blank page.</li>
-            <li>Built the models, logic, and requirements for a Talent Advisor and a Workforce Planning agent inside a client's own environment, presented at their executive leadership offsite.</li>
-            <li>Managed a junior consultant through the full build.</li>
-            <li>Separately built a Pitch Coach agent for pitch and relationship coaching ahead of client meetings — none of these came with a specification.</li>
-          </ul>
-          <span class="tag">Maps to: 0-to-1 ownership</span>
-        </div>
-      </div>
-
-      <div class="turn ask reveal">
-        <div class="time">04:52</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>We're an AI company. Do you actually build with AI, or just talk about it?</p>
-        </div>
-      </div>
-      <div class="turn reveal">
-        <div class="time">05:04</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Shipped four agents into production: Talent Advisor, Workforce Planning, and a Pitch Coach.</li>
-            <li>Each architected and deployed inside a client's own environment to meet full enterprise security and compliance requirements — the same standard Listen holds itself to with its customers.</li>
-            <li>Contributed to Accenture's Responsible AI practice: internal thought leadership and client-facing advisory on AI governance.</li>
-            <li>Work daily in Claude Code and Cowork, as fluently as most professionals work in a spreadsheet.</li>
-          </ul>
-          <span class="tag">Maps to: AI-native, enterprise-grade</span>
+        <div class="turn">
+          <div class="time">02:21</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Designed and executed a $250M ecosystem partnership go-to-market strategy across product, engineering, and client sales.</li>
+              <li>Led total addressable market sizing for a global beauty and wellness company — sourced third-party data to model 5-year CAGR and segment-level TAM.</li>
+              <li>Supported the quantitative customer research that determined which consumer segments to prioritize, and coached a newly onboarded Senior Strategy Consultant on the underlying financial modeling.</li>
+              <li>Both required the same underlying skill: identifying exactly who your best customers are, in figures a sales organization can act on.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="turn ask reveal">
-        <div class="time">05:40</div>
-        <div>
-          <div class="speaker"><span class="who listen">LISTEN</span></div>
-          <p>Last one — what makes a customer proud enough to tell your story for you?</p>
+      <div class="qpair reveal">
+        <div class="pair-head">Aligns Sales, CS &amp; Marketing Around One Plan</div>
+        <div class="turn ask">
+          <div class="time">03:00</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>This role sits at the intersection of Sales, CS, and Marketing. How do you keep three teams with three different incentives moving together?</p>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="time">03:16</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Built interview guides and led 20+ structured interviews with Directors, Senior Directors, and VPs across Data Engineering, Sales &amp; Transformation, Data Science, Supply Chain, and Commercial functions to redesign an operating model and map digital role profiles for a Fortune 500 food &amp; beverage company.</li>
+              <li>Led working sessions with the VP of Finance, Controller, and Director of Sourcing for a Fortune 500 building-materials distribution company, managing a team of 4 analysts to analyze 1M+ survey data points and identify $4M+ in OpEx savings.</li>
+              <li>Directed cross-functional global teams through end-to-end business strategy launches and managed customer onboarding across functions against shared enterprise KPIs.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="turn reveal">
-        <div class="time">05:51</div>
-        <div>
-          <div class="speaker"><span class="who megan">MEGAN</span></div>
-          <ul class="mlist">
-            <li>Genuine curiosity about a client's business, well before any ask is made.</li>
-            <li>Led full talent and organizational assessments for top-5 global banks.</li>
-            <li>Synthesized insight across dozens of functions into recommendations senior leaders acted on.</li>
-            <li>That only works when people trust you enough to tell you the truth first — advocacy is simply what that trust looks like once it becomes public.</li>
-          </ul>
-          <span class="tag">Maps to: Customer experience & advocacy</span>
+
+      <div class="qpair reveal">
+        <div class="pair-head">Zero-to-One Builder — No Playbook Required</div>
+        <div class="turn ask">
+          <div class="time">03:58</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>This is a zero-to-one seat — no playbook exists yet. What's your evidence you can build one?</p>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="time">04:11</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Gorges Ventures: fund infrastructure, LP pipeline, and portfolio advisory, all built from a blank page.</li>
+              <li>Built the models, logic, and requirements for a Talent Advisor and a Workforce Planning agent inside a client's own environment, presented at their executive leadership offsite.</li>
+              <li>Managed a junior consultant through the full build.</li>
+              <li>Separately built a Pitch Coach agent for pitch and relationship coaching ahead of client meetings — none of these came with a specification.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="qpair reveal">
+        <div class="pair-head">AI-Native Builder, Enterprise-Grade Execution</div>
+        <div class="turn ask">
+          <div class="time">04:52</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>We're an AI company. Do you actually build with AI, or just talk about it?</p>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="time">05:04</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Shipped four agents into production: Talent Advisor, Workforce Planning, and a Pitch Coach.</li>
+              <li>Each architected and deployed inside a client's own environment to meet full enterprise security and compliance requirements — the same standard Listen holds itself to with its customers.</li>
+              <li>Contributed to Accenture's Responsible AI practice: internal thought leadership and client-facing advisory on AI governance.</li>
+              <li>Work daily in Claude Code and Cowork, as fluently as most professionals work in a spreadsheet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="qpair reveal">
+        <div class="pair-head">Fluent in Growth Metrics — Just Applied to People, Not Only Paid Channels</div>
+        <div class="turn ask">
+          <div class="time">05:40</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>You haven't owned CAC, LTV, or ROAS in the traditional marketing sense. How do you actually think about growth metrics?</p>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="time">05:58</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Performed a strategic workforce planning analysis for a B2B banking commercial organization, analyzing CAGR by client segment and line of business against a 30% YoY growth ambition — the same discipline as sizing a market and setting segment-level revenue targets.</li>
+              <li>Built a bottom-up efficacy model per salesperson, weighted by segment and growth multipliers to project where growth would accelerate — the sales-force equivalent of conversion rate and channel efficacy over time.</li>
+              <li>Built coverage-ratio benchmarks by account type and size, then benchmarked cost-to-hire against Year 1 and Year 3 return — the same logic as LTV:CAC, applied to a sales force instead of a paid channel.</li>
+              <li>Separately led change management for a $140M operating model investment: a 95% conversion rate getting transitioning employees to sign offer letters, and a 90% retention rate through a critical transition period — real funnel and retention metrics, just applied to people.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="qpair reveal">
+        <div class="pair-head">Earns the Trust That Becomes Advocacy</div>
+        <div class="turn ask">
+          <div class="time">06:35</div>
+          <div>
+            <div class="speaker"><span class="who listen">LISTEN</span></div>
+            <p>Last one — what makes a customer proud enough to tell your story for you?</p>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="time">06:46</div>
+          <div>
+            <div class="speaker"><span class="who megan">MEGAN</span></div>
+            <ul class="mlist">
+              <li>Genuine curiosity about a client's business, well before any ask is made.</li>
+              <li>Led full talent and organizational assessments for top-5 global banks.</li>
+              <li>Synthesized insight across dozens of functions into recommendations senior leaders acted on.</li>
+              <li>That only works when people trust you enough to tell you the truth first — advocacy is simply what that trust looks like once it becomes public.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -438,7 +513,7 @@
 <section id="reel" style="background:var(--bg-tint);">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">02 — Highlight Reel</span>
+      <span class="mono">03 — Highlight Reel</span>
       <h2>The numbers, if you're skimming.</h2>
     </div>
     <div class="reel reveal">
@@ -448,7 +523,7 @@
       <div class="tile"><span class="num">4</span><span class="cap">AI agents shipped to production — enterprise-compliant</span></div>
       <div class="tile"><span class="num">1M+</span><span class="cap">Survey data points analyzed to shape a Fortune 500 initiative</span></div>
       <div class="tile"><span class="num">$4M+</span><span class="cap">OpEx savings identified with Finance & Sourcing leadership</span></div>
-      <div class="tile"><span class="num">500+</span><span class="cap">Person commercial org — annual conference co-led</span></div>
+      <div class="tile"><span class="num">550</span><span class="cap">Sales leaders reached through a co-led learning experience</span></div>
       <div class="tile"><span class="num">30+</span><span class="cap">People managed across client engagements</span></div>
       <div class="tile"><span class="num">6+ yrs</span><span class="cap">Building trust with enterprise & C-suite stakeholders</span></div>
     </div>
@@ -458,7 +533,7 @@
 <section id="skills" class="dark">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">03 — Full Skill Set</span>
+      <span class="mono">04 — Full Skill Set</span>
       <h2>Everything that goes into the answers above.</h2>
     </div>
     <div class="skillgrid">
@@ -530,7 +605,7 @@
 <section id="fluent" style="background:var(--bg-tint);">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">04 — Already Fluent In Their World</span>
+      <span class="mono">05 — Already Fluent In Their World</span>
       <h2>Listen sells across use case, role, and industry. Here's where I've actually done the work.</h2>
     </div>
     <div class="fluentgrid reveal">
@@ -562,7 +637,7 @@
 <section id="experience">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">05 — Experience Log</span>
+      <span class="mono">06 — Experience Log</span>
       <h2>Where the transcript above actually happened.</h2>
     </div>
     <div class="log reveal">
@@ -601,7 +676,7 @@
 <section id="education" style="background:var(--bg-tint);">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">06 — Education</span>
+      <span class="mono">07 — Education</span>
       <h2>Cornell, twice.</h2>
     </div>
     <div class="edu reveal">
@@ -622,44 +697,6 @@
           <li>Cumulative GPA: 3.87</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="personality">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="mono">07 — I Already Use Your Product</span>
-      <h2>Turned Listen's own personality test on myself. Here's what came back.</h2>
-    </div>
-    <div class="traitcard reveal">
-      <div class="traitrow">
-        <span class="tname">Agreeable</span>
-        <span class="tbar"><span class="tfill" style="width:92%;background:var(--amber);"></span></span>
-        <span class="tpct">92%</span>
-      </div>
-      <div class="traitrow">
-        <span class="tname">Open</span>
-        <span class="tbar"><span class="tfill" style="width:67%;background:var(--green);"></span></span>
-        <span class="tpct">67%</span>
-      </div>
-      <div class="traitrow">
-        <span class="tname">Conscientious</span>
-        <span class="tbar"><span class="tfill" style="width:57%;background:var(--violet);"></span></span>
-        <span class="tpct">57%</span>
-      </div>
-      <div class="traitrow">
-        <span class="tname">Neurotic</span>
-        <span class="tbar"><span class="tfill" style="width:53%;background:var(--coral);"></span></span>
-        <span class="tpct">53%</span>
-      </div>
-      <div class="traitrow">
-        <span class="tname">Extraverted</span>
-        <span class="tbar"><span class="tfill" style="width:47%;background:var(--blue);"></span></span>
-        <span class="tpct">47%</span>
-      </div>
-      <p class="trait-callout">92% agreeable — compassionate, cooperative, empathetic — is the headline. It's the same instinct behind building a sales methodology around <em>unreasonable hospitality</em> instead of a script. Moderate on extraversion, too: energized by people, not by being the loudest one in the room — which is closer to what hosting a customer community actually requires.</p>
-      <a class="mono result-link" href="https://listenlabs.ai/personality/test/r/6707bbbf6c1e456b" target="_blank" rel="noopener">View the full result on Listen →</a>
     </div>
   </div>
 </section>
